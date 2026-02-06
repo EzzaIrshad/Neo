@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import PrimaryButton from '@/ui/components/buttons/primary-button';
 import TitleBadge from '@/ui/components/badge/title-badge';
+import { routes } from '@/app/routes';
 
 const HomeAbout: React.FC = () => {
     return (
@@ -22,6 +23,7 @@ const HomeAbout: React.FC = () => {
                         <PrimaryButton
                             text='Learn More About Us'
                             bgColor="linear-gradient(270deg, #434343, #000)"
+                            link={routes.landing.about}
                         />
                     </div>
                 </div>

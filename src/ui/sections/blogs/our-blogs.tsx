@@ -3,6 +3,7 @@ import PrimaryButton from '@/ui/components/buttons/primary-button'
 import Image from 'next/image'
 import { blogCardData } from '@/constants/blog-card-data'
 import BlogCard from '@/ui/components/cards/blog-card'
+import { routes } from '@/app/routes'
 
 const OurBlogs = () => {
     return (
@@ -24,6 +25,7 @@ const OurBlogs = () => {
                         <PrimaryButton
                             text='Browse All Articles'
                             bgColor="linear-gradient(270deg, #434343, #000)"
+                            link={routes.landing.blogs}
                         />
                     </div>
                 </div>

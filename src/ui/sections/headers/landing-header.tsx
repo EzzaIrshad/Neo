@@ -10,16 +10,18 @@ const LandingHeader = () => {
                     neo
                 </Link>
                 <nav className="max-md:hidden flex items-center justify-start gap-12.5 text-[#222] text-lg tracking-wide">
-                    <Link href={routes.about}>About</Link>
-                    <Link href={routes.services}>Services</Link>
-                    <Link href={routes.career}>Career</Link>
-                    <Link href={routes.blog}>Blog</Link>
+                    <Link href={routes.landing.about}>About</Link>
+                    <Link href={routes.landing.services}>Services</Link>
+                    <Link href={routes.landing.career}>Career</Link>
+                    <Link href={routes.landing.blogs}>Blog</Link>
                 </nav>
 
                 <div className="max-md:hidden">
                     <PrimaryButton
                         text='Get Hired Today'
-                        bgColor="linear-gradient(270deg, #434343, #000)" />
+                        bgColor="linear-gradient(270deg, #434343, #000)"
+                        link={routes.landing.contact}
+                        />
                 </div>
             </div>
         </div>

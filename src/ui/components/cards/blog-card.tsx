@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import PrimaryButton from '../buttons/primary-button'
+import { routes } from '@/app/routes';
 
 interface Props {
     data: {
@@ -39,7 +40,9 @@ const BlogCard = ({ data }: Props) => {
                 <PrimaryButton
                     text='Read More'
                     bgColor="white"
-                    textColor="#1f1f1f" />
+                    textColor="#1f1f1f"
+                    link={routes.landing.blogs}
+                    />
             </div>
         </div>
     )

@@ -6,6 +6,7 @@ import Autoplay from 'embla-carousel-autoplay'
 import { useEffect, useState } from 'react';
 import PrimaryButton from '../buttons/primary-button';
 import Image from 'next/image';
+import { routes } from '@/app/routes';
 
 
 
@@ -56,6 +57,7 @@ const ServicesFadeCarousel = ({ options, content }: PropType) => {
                                     <PrimaryButton
                                         text="Discover Now"
                                         bgColor="linear-gradient(270deg, #434343, #000)"
+                                        link={routes.landing.services}
                                     />
                                 </div>
                             </div>

@@ -50,11 +50,11 @@ export class SupabaseProxy {
         const { data } = await supabase.auth.getClaims(); 
         const user = data?.claims ?? null;
 
-        const { data: profile } = await supabase
-            .from("users")
-            .select("id, role, full_name")
-            .eq("id", user?.sub)
-            .single();
+        // const { data: profile } = await supabase
+        //     .from("users")
+        //     .select("id, role, full_name")
+        //     .eq("id", user?.sub)
+        //     .single();
 
         const pathname = this.request.nextUrl.pathname;
 
@@ -66,8 +66,11 @@ export class SupabaseProxy {
             pathname === routes.landing.home ||
             pathname === routes.auth.signin ||
             pathname === routes.auth.callback ||
-            pathname === routes.about ||
-            pathname === routes.contact;
+            pathname === routes.landing.about ||
+            pathname === routes.landing.services ||
+            pathname === routes.landing.career ||
+            pathname === routes.landing.blogs ||
+            pathname === routes.landing.contact;
 
         // Career apply route requires authentication
         // if (!user && isCareerApply) {

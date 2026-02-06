@@ -15,11 +15,11 @@ const LandingFooter = () => {
                     </Link>
                     <nav className="flex max-sm:flex-wrap items-center sm:h-7.5 font-medium justify-center sm:justify-start gap-x-4.5 gap-y-2.5 sm:gap-8 text-white/80 *:hover:text-white text-lg tracking-wide">
                         <Link href={routes.landing.home}>Home</Link>
-                        <Link href={routes.about}>About Us</Link>
-                        <Link href={routes.services}>Services</Link>
-                        <Link href={routes.blog}>Blog</Link>
-                        <Link href={routes.career}>Career</Link>
-                        <Link href={routes.contact}>Contact</Link>
+                        <Link href={routes.landing.about}>About Us</Link>
+                        <Link href={routes.landing.services}>Services</Link>
+                        <Link href={routes.landing.blogs}>Blog</Link>
+                        <Link href={routes.landing.career}>Career</Link>
+                        <Link href={routes.landing.contact}>Contact</Link>
                     </nav>
                 </div>
 
@@ -41,6 +41,7 @@ const LandingFooter = () => {
                         text='Contact Us Now'
                         bgColor='white'
                         textColor='#1f1f1f'
+                        link={routes.landing.contact}
                     />
                 </div>
 

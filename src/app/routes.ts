@@ -6,6 +6,11 @@ export const routes = {
 
   landing: {
     home: "/home" as Route,
+    about: "/about" as Route,
+    contact: "/contact" as Route,
+    blogs: "/blogs" as Route,
+    career: "/career" as Route,
+    services: "/services" as Route
   },
 
   auth: {
@@ -16,10 +21,4 @@ export const routes = {
 
   error: "/error" as Route,
 
-
-  about: "/about" as Route,
-  contact: "/contact" as Route,
-  blog: "/blog" as Route,
-  career: "/career" as Route,
-  services: "/services" as Route
 };

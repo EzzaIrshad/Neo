@@ -3,6 +3,7 @@ import PrimaryButton from "@/ui/components/buttons/primary-button"
 import JobCard from "@/ui/components/cards/job-card"
 import { jobCardData } from "@/constants/job-card-data"
 import TitleBadge from "@/ui/components/badge/title-badge"
+import { routes } from "@/app/routes"
 
 
 const JobOpening = () => {
@@ -22,7 +23,12 @@ const JobOpening = () => {
 
                     {/* Action Button*/}
                     <div className='mb-5'>
-                        <PrimaryButton text='View all Job Openings' bgColor="white" textColor="#1f1f1f" />
+                        <PrimaryButton 
+                        text='View all Job Openings' 
+                        bgColor="white" 
+                        textColor="#1f1f1f" 
+                        link={routes.landing.career}
+                        />
                     </div>
                 </div>
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-y-4 gap-x-5 place-content-center place-items-center">

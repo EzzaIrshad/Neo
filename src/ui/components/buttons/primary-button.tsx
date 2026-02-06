@@ -1,4 +1,3 @@
-import { routes } from "@/app/routes"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 
@@ -6,9 +5,10 @@ interface Props {
     text: string
     bgColor: string
     textColor?: string
+    link: string
 }
 
-const PrimaryButton = ({text, bgColor, textColor}: Props) => {
+const PrimaryButton = ({text, bgColor, textColor, link}: Props) => {
     return (
         <div className="group relative flex items-center">
             {/* Left Arrow */}
@@ -21,7 +21,7 @@ const PrimaryButton = ({text, bgColor, textColor}: Props) => {
 
             {/* Button */}
             <Link
-                href={routes.contact}
+                href={link}
                 className="relative z-10 text-white font-medium tracking-wide leading-6 border border-[#18181899]
                 rounded-full px-3.5 py-2 transition-transform duration-300 group-hover:translate-x-10"
                 style={{
