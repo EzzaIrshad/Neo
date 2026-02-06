@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PrimaryButton from '@/ui/components/buttons/primary-button';
+import TitleBadge from '@/ui/components/badge/title-badge';
 
 const HomeAbout: React.FC = () => {
     return (
@@ -9,15 +10,7 @@ const HomeAbout: React.FC = () => {
                 <div className="flex flex-col items-start justify-between gap-5 lg:flex-row lg:items-end">
                     <div className="max-w-2xl">
                         {/* Tag / Badge */}
-                        <div className="mb-4.5 inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-2 text-sm font-medium text-muted-foreground">
-                            <Image
-                                src="/assets/svg/black-sparkle.svg"
-                                alt="Sparkles"
-                                width={23}
-                                height={23}
-                            />
-                            What We Stand For
-                        </div>
+                        <TitleBadge text="What We Stand For" />
                         {/* Title */}
                         <h1 className="text-[clamp(26px,5vw,42px)] font-medium max-w-139.5">
                             Empowering Job Seekers to Grow, Upskill, and Get Hired.

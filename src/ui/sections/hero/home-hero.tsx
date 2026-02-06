@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const HomeHero = () => {
     return (
-        <section className="section-container bg-white">
+        <section className="section-container bg-white mt-5">
             <div className="grid grid-cols-1 grid-rows-[auto_auto] gap-10 py-10 md:py-25 md:px-5 rounded-2xl">
 
                 {/* header */}

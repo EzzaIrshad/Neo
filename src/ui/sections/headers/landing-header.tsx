@@ -17,7 +17,9 @@ const LandingHeader = () => {
                 </nav>
 
                 <div className="max-md:hidden">
-                    <PrimaryButton text='Get Hired Today'/>
+                    <PrimaryButton
+                        text='Get Hired Today'
+                        bgColor="linear-gradient(270deg, #434343, #000)" />
                 </div>
             </div>
         </div>

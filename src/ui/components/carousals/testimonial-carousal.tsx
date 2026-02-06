@@ -8,7 +8,7 @@ import {
     CarouselPrevious,
 } from "@/ui/components/shadcn/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import { testimonialData } from "../../../../constants/testimonial-data"
+import { testimonialData } from "@/constants/testimonial-data"
 import Image from "next/image"
 
 const TestimonialCarousal = () => {

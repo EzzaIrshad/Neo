@@ -1,39 +1,17 @@
+import { processCard } from '@/constants/process-card-data'
+import TitleBadge from '@/ui/components/badge/title-badge'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 
 const JobProcess = () => {
-    const processCard = [
-        {
-            id: "1",
-            title: "Prepare for Interviews",
-            description: "AI-powered mock interviews, role-based questions & instant feedback."
-        },
-        {
-            id: "2",
-            title: "Apply With Confidence",
-            description: "We guide you through applications with tailored resume & portfolio improvements."
-        },
-        {
-            id: "3",
-            title: "Get Shortlisted",
-            description: "We connect you directly with hiring teams searching for skills like yours."
-        },
-    ]
+    
     return (
         <section className='section-container py-10 lg:py-20'>
             <div className='py-10 md:py-25 px-2 md:px-5 bg-white rounded-2xl flex flex-col gap-10'>
                 <div className="flex flex-col items-center md:px-13.5 md:gap-4.5">
 
                     {/* Tag / Badge */}
-                    <div className="mb-4.5 inline-flex items-center gap-2 rounded-full border border-gray-200 px-3 py-2 text-sm font-medium text-muted-foreground">
-                        <Image
-                            src="/assets/svg/black-sparkle.svg"
-                            alt="Sparkles"
-                            width={23}
-                            height={23}
-                        />
-                        Our Process
-                    </div>
+                    <TitleBadge text="Our Process" />
 
                     {/* Title */}
                     <h1 className="text-[clamp(26px,5vw,42px)] text-center font-medium max-w-125">
