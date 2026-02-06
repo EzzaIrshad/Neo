@@ -2,10 +2,24 @@
 import { Route } from "next";
 
 export const routes = {
-  home: "/" as Route,
+  root: "/" as Route,
 
-  signin: "/signin" as Route,
-  callback: "/callback" as Route,
+  landing: {
+    home: "/home" as Route,
+  },
+
+  auth: {
+    signin: "/signin" as Route,
+    confirm: "/auth/confirm" as Route,
+    callback: "/auth/callback" as Route,
+  },
+
   error: "/error" as Route,
-  admin: "/admin" as Route,
+
+
+  about: "/about" as Route,
+  contact: "/contact" as Route,
+  blog: "/blog" as Route,
+  career: "/career" as Route,
+  services: "/services" as Route
 };

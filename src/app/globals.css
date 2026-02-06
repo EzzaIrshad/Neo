@@ -48,24 +48,33 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+   /* Background & text */
+  --background: oklch(0.9851 0 0);
+  --foreground: oklch(0.2393 0 0);
+
+  /* Brand colors */
+  --primary: oklch(0.2393 0 0);           /* #1f1f1f */
+  --primary-foreground: oklch(0.985 0 0);
+
+  --secondary: oklch(0.8075 0.1436 77.54);       /* #F3B344 */
+  --secondary-foreground: oklch(0.2393 0 0);
+
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.3867 0 0);    /* #444444 */
+
+  /* Borders & UI */
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  /* Cards */
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
   --accent: oklch(0.97 0 0);
   --accent-foreground: oklch(0.205 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -90,8 +99,8 @@
   --popover-foreground: oklch(0.985 0 0);
   --primary: oklch(0.922 0 0);
   --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
+   --secondary: oklch(0.82 0.17 75);
+  --secondary-foreground: oklch(0.205 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
   --accent: oklch(0.269 0 0);
@@ -121,5 +130,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply mx-auto max-w-330 px-3 lg:px-5;
   }
 }

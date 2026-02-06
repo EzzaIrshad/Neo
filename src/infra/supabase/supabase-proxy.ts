@@ -56,71 +56,37 @@ export class SupabaseProxy {
             .eq("id", user?.sub)
             .single();
 
-        const { data: jobApplication } = await supabase
-            .from("job_applications")
-            .select("user_id")
-            .eq("user_id", user?.sub)
-            .single();   
-
         const pathname = this.request.nextUrl.pathname;
 
         // Check if user is trying to access apply page
-        const isCareerApply = pathname.startsWith("/careers/") && pathname.endsWith("/apply");
+        // const isCareerApply = pathname.startsWith("/careers/") && pathname.endsWith("/apply");
 
         // Public routes (no auth required)
         const isPublic =
-            pathname === "/" ||
-            pathname.startsWith("/signin") ||
-            pathname.startsWith("/callback") ||
-            pathname.startsWith("/careers") ||
-            pathname.startsWith("/about") ||
-            pathname.startsWith("/contact");
+            pathname === routes.landing.home ||
+            pathname === routes.auth.signin ||
+            pathname === routes.auth.callback ||
+            pathname === routes.about ||
+            pathname === routes.contact;
 
         // Career apply route requires authentication
-        if (!user && isCareerApply) {
-            const url = this.request.nextUrl.clone();
-            url.pathname = routes.signin;
-            return NextResponse.redirect(url);
-        }
+        // if (!user && isCareerApply) {
+        //     const url = this.request.nextUrl.clone();
+        //     url.pathname = routes.auth.signin;
+        //     return NextResponse.redirect(url);
+        // }
 
         // Not logged in + protected route → landing
         if (!user && !isPublic) {
             const url = this.request.nextUrl.clone();
-            url.pathname = "/";
+            url.pathname = routes.landing.home;
             return NextResponse.redirect(url);
         }
 
         // OWNER → allow EVERYTHING
-        if (profile?.role === "owner") {
-            return this.supabaseResponse;
-        }
-
-        // Role-based access (non-owner)
-        if (user) {
-            const role = profile?.role as "HR" | "user";
-
-            // HR-only routes
-            if (
-                pathname.startsWith("/hr") &&
-                role !== "HR"
-            ) {
-                const url = this.request.nextUrl.clone();
-                url.pathname = "/";
-                return NextResponse.redirect(url);
-            }
-            // User profile routes
-            if (
-                pathname === routes.user(profile?.full_name?.toLowerCase().replace(/\s+/g, '-') || '') &&
-                !jobApplication
-            ) {
-                const url = this.request.nextUrl.clone();
-                url.pathname = "/";
-                return NextResponse.redirect(url);
-            }
-
-        }
-
-        
+        // if (profile?.role === "admin") {
+        //     return this.supabaseResponse;
+        // }        
 
         return this.supabaseResponse;
     }
