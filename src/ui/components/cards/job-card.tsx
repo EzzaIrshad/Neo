@@ -61,8 +61,8 @@ const JobCard = ({ logo, company, title, salary, location, tags, link }: JobCard
                 {/*action button */}
                 <Link
                     href={link}
-                    className="relative z-10 text-center max-sm:w-full text-white font-medium tracking-wide leading-6 border border-[#18181899] bg-[linear-gradient(270deg,#434343,#000)]
-                rounded-full px-3.5 py-2 transition-transform duration-300 group-hover:translate-x-10"
+                    className="text-center max-sm:w-full text-white font-medium tracking-wide leading-6 border border-[#18181899] bg-[linear-gradient(270deg,#434343,#000)]
+                rounded-full px-3.5 py-2"
 
                 >
                     See Details

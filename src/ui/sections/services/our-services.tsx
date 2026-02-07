@@ -1,4 +1,4 @@
-import { CarousalContent } from '@/constants/services-carousal-data'
+import { CarousalContent1 } from '@/constants/services-carousal-data-1'
 import TitleBadge from '@/ui/components/badge/title-badge'
 import ServicesFadeCarousel from '@/ui/components/carousals/services-fade-carousal'
 import { EmblaOptionsType } from 'embla-carousel'
@@ -22,7 +22,7 @@ const OurServices = () => {
                 </div>
 
                 <div className='p-3 md:p-8 xl:p-12 rounded-2xl bg-white'>
-                    <ServicesFadeCarousel options={OPTIONS} content={CarousalContent} />
+                    <ServicesFadeCarousel options={OPTIONS} content={CarousalContent1} />
 
                 </div>
             </div>

@@ -1,4 +1,4 @@
-export const CarousalContent = [
+export const CarousalContent1 = [
     {
         id: 1,
         title: "Career Path Mapping",

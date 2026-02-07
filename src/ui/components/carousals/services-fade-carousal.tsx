@@ -8,14 +8,13 @@ import PrimaryButton from '../buttons/primary-button';
 import Image from 'next/image';
 import { routes } from '@/app/routes';
 
-
-
 type PropType = {
+    direction?: string
     options?: EmblaOptionsType
     content: Array<{ id: number, title: string, description: string, benefits: string[], imageSrc: string }>
 }
 
-const ServicesFadeCarousel = ({ options, content }: PropType) => {
+const ServicesFadeCarousel = ({ direction, options, content }: PropType) => {
 
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Fade(), Autoplay()])
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -28,8 +27,8 @@ const ServicesFadeCarousel = ({ options, content }: PropType) => {
 
     return (
         <div>
-            <div className='flex w-full justify-end'>
-                <div className="w-full lg:w-140 xl:w-170">
+            <div className={`flex w-full  ${direction ? "justify-start" : "justify-end"}`}>
+                <div className="w-full lg:w-140 xl:w-160">
                     <div className="w-full text-right font-medium text-xl tracking-wide">{String(currentIndex + 1).padStart(2, '0')}/{String(content.length).padStart(2, '0')}</div>
                     <div className="flex items-start mt-2 mb-8 gap-5">
                         {content.map((item) => (
@@ -41,7 +40,7 @@ const ServicesFadeCarousel = ({ options, content }: PropType) => {
             <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex -ml-4 touch-pan-y touch-pinch-zoom">
                     {content.map((item) => (
-                        <div className="flex-[0_0_100%] flex max-lg:flex-col gap-8 justify-between min-w-0 pl-4" key={item.id}>
+                        <div className={`flex-[0_0_100%] flex max-lg:flex-col gap-10 justify-between min-w-0 pl-4 ${direction && "flex-row-reverse"}`} key={item.id}>
                             <div className="flex flex-col justify-start items-start">
                                 <h3 className='font-medium text-[22px] lg:text-4xl'>{item.title}</h3>
                                 <p className='text-muted-foreground md:text-lg xl:text-xl tracking-wide max-w-112.5 mt-4.5'>
@@ -66,7 +65,7 @@ const ServicesFadeCarousel = ({ options, content }: PropType) => {
                                 alt='service image'
                                 width={697}
                                 height={366}
-                                className='rounded-2xl object-cover w-full h-auto lg:max-w-140 xl:max-w-170 max-h-75 lg:max-h-91.5 select-none'
+                                className='rounded-2xl object-cover w-full h-auto lg:max-w-140 xl:max-w-160 max-h-75 lg:max-h-91.5 select-none'
                             />
                         </div>
                     ))}

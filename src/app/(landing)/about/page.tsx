@@ -1,3 +1,4 @@
+import AboutTrust from "@/ui/sections/about/about-trust";
 import HomeAbout from "@/ui/sections/about/home-about";
 import AboutHero from "@/ui/sections/hero/about-hero";
 import JobProcess from "@/ui/sections/process/job-process";
@@ -9,6 +10,7 @@ export default function AboutPage() {
   return (
     <>
     <AboutHero />
+    <AboutTrust />
     <JobProcess />
     <HomeAbout />
     <Testimonials />

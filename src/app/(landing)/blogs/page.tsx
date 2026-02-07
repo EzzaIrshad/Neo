@@ -1,10 +1,12 @@
-import OurBlogs from "@/ui/sections/blogs/our-blogs";
+import BlogsList from "@/ui/sections/blogs/blogs-list";
+import BlogsHero from "@/ui/sections/hero/blogs-hero";
 import Newsletter from "@/ui/sections/testimonials/newsletter";
 
-export default function Home() {
+export default function BlogsPage() {
     return (
         <>
-            <OurBlogs />
+            <BlogsHero />
+            <BlogsList />
             <Newsletter />
         </>
     );

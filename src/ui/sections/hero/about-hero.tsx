@@ -29,7 +29,7 @@ const AboutHero = () => {
                         height={450}
                         className="rounded-xl object-cover w-175 h-auto"
                     />
-                    <div className="flex relative bg-background rounded-2xl flex-col px-6 py-6">
+                    <div className="flex relative rounded-2xl flex-col px-6 py-6">
                         <div className="flex flex-col gap-2">
                             <div className="flex items-center justify-start gap-2">
                                 <span className="text-muted-foreground">4.9/5</span>
@@ -43,14 +43,16 @@ const AboutHero = () => {
                             </div>
                             <p className="text-lg font-medium">Trusted by Professionals & Teams Worldwide</p>
                         </div>
-                        <div className="h-full flex items-center justify-center">
-                            <Image
+                        <div className="h-full flex bg-background rounded-2xl mt-5 w-full items-center justify-center relative">
+                            <div className="absolute z-10 top-36 left-[10%]">
+                                <Image
                                 src="/assets/images/about/bg-ring.png"
                                 alt="Ring Image"
                                 width={250}
                                 height={250}
-                                className="absolute z-10 w-62.5 top-36 left-[10%] object-cover h-auto"
+                                className=" w-62.5  object-cover h-auto"
                             />
+                            </div>
                             {/* inner ring */}
                             <div className="z-30 rounded-full flex items-center justify-center size-23.75 md:size-33.75 absolute bg-[linear-gradient(#4d4d4d33,#0003)]">
                                 <Link href={routes.landing.contact} className="relative flex flex-col items-center justify-center size-20 md:size-30 p-3.5 rounded-full bg-[linear-gradient(#4d4d4d,#000)]">
